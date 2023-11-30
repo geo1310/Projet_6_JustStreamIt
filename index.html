@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Carrousel</title>
+</head>
+<body>
+    <div id="carrousel">
+        <div id="container">
+        </div>
+        <img src="bouton.png" alt="bouton"  class="bouton" id="droite" />
+        <img src="bouton.png" alt="bouton"  class="bouton" id="gauche"/>
+    </div>
+    <script>
+        let nb_images = 7
+        let position = 0
+        let left_button = document.getElementById("gauche")
+        let right_button = document.getElementById("droite")
+        let container = document.getElementById("container")
+        document.body.onload=function(){
+            container.style.width=(800*nb_images)+"px"
+            for(let i=1; i<=nb_images; i++){
+                let div = document.createElement("div")
+                div.className = "photo"
+                div.style.backgroundImage="url('image" + i + ".jpg')"
+                container.appendChild(div)
+
+            }
+        }
+        left_button.onclick=function(){
+            if(position>-nb_images+1){
+                position--
+                container.style.transform = "translate("+ position*440 + "px)"
+                container.style.transition = "all 1s ease"
+                afficherMasquer()
+            }
+
+        }
+        right_button.onclick=function(){
+            if(position<0){
+                position++
+                container.style.transform = "translate("+ position*440 + "px)"
+                container.style.transition = "all 1s ease"
+                afficherMasquer()
+            }
+
+        }
+        function afficherMasquer(){
+            console.log(position)
+            if(position == -nb_images+5){
+                gauche.style.visibility = "hidden"
+            }
+            else{
+                gauche.style.visibility = "visible"
+            }
+            if(position == 0){
+                droite.style.visibility = "hidden"
+            }
+            else{
+                droite.style.visibility = "visible"
+            }
+        }
+    </script>
+    
+</body>
+</html>
