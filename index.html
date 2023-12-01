@@ -1,68 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/script.js" defer></script>
     <title>Carrousel</title>
 </head>
-<body>
-    <div id="carrousel">
-        <div id="container">
-        </div>
-        <img src="bouton.png" alt="bouton"  class="bouton" id="droite" />
-        <img src="bouton.png" alt="bouton"  class="bouton" id="gauche"/>
+<body id="body">
+    <header class="header">
+        <h1>JustStreamIt</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="#" class="nav-accueil">Accueil</a></li>
+                <li><a href="#" class="nav-categories">Catégories</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <div id="best-movie"></div>
+        <section id="category-best" class="section">
+            <div class="carrousel">
+                <h2>Films les mieux notés</h2>
+                <div class="container container-best"></div>
+            </div>
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right" />
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-left" />
+        </section>
+        <section id="category1" class="section">
+            <div class="carrousel">
+                <h2>Catégorie 1</h2>
+                <div class="container container-1"></div>
+            </div>
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right" />
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-left" />
+        </section>
+        <section id="category2" class="section">
+            <div class="carrousel">
+                <h2>Catégorie 2</h2>
+                <div class="container container-2"></div>
+            </div>
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right" />
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-left" />
+        </section>
+        <section id="category3" class="section">
+            <div class="carrousel">
+                <h2>Catégorie 3</h2>
+                <div class="container container-3"></div>
+            </div>
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right" />
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-left" />
+        </section>
+        
+    </main>
+    <div id="footer">
     </div>
-    <script>
-        let nb_images = 7
-        let position = 0
-        let left_button = document.getElementById("gauche")
-        let right_button = document.getElementById("droite")
-        let container = document.getElementById("container")
-        document.body.onload=function(){
-            container.style.width=(800*nb_images)+"px"
-            for(let i=1; i<=nb_images; i++){
-                let div = document.createElement("div")
-                div.className = "photo"
-                div.style.backgroundImage="url('image" + i + ".jpg')"
-                container.appendChild(div)
-
-            }
-        }
-        left_button.onclick=function(){
-            if(position>-nb_images+1){
-                position--
-                container.style.transform = "translate("+ position*440 + "px)"
-                container.style.transition = "all 1s ease"
-                afficherMasquer()
-            }
-
-        }
-        right_button.onclick=function(){
-            if(position<0){
-                position++
-                container.style.transform = "translate("+ position*440 + "px)"
-                container.style.transition = "all 1s ease"
-                afficherMasquer()
-            }
-
-        }
-        function afficherMasquer(){
-            console.log(position)
-            if(position == -nb_images+5){
-                gauche.style.visibility = "hidden"
-            }
-            else{
-                gauche.style.visibility = "visible"
-            }
-            if(position == 0){
-                droite.style.visibility = "hidden"
-            }
-            else{
-                droite.style.visibility = "visible"
-            }
-        }
-    </script>
-    
 </body>
 </html>
