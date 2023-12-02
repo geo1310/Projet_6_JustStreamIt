@@ -40,12 +40,50 @@
 /* section best movie */
 
 #best-movie{
-    height: 400px;
     margin-top: 50px;
-    background-color: #ffcc00;
+    display: flex;
+    justify-content: space-around;
+    
+    align-items: center;
+}
+#best-movie span{
+    width: 30vw;
+}
+#best-movie h2{
+    font-size: 64px;
+    text-align: start;
+    margin: 0;
+}
+#best-movie img{
+    width: 20vw;
+    border: solid 10px #fff;
+}
+#best-movie p{
+    font-size: 24px;
+    color: #fff;
+    text-align: justify;
+}
+#best-movie button{
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 40px;
+    padding: 5px 40px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+#best-movie button img{
+    width: 24px;
+}
+#best-movie button:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 /* sections carrousels */
+
 .section{
     width: 100%;
     margin-top: 50px;
@@ -56,25 +94,25 @@
 }
 .carrousel{
     width: 73%;
-    height: 300px;
+    height: 350px;
     padding-bottom: 20px;
     overflow: hidden;
 }
 h2{
+    font-size: 32px;
     color: aliceblue;
     margin-left: 20px;
     text-align: center;
 }
 .container{
-    height: 80%;
+    height: 70%;
     display: flex;
     align-items: center;
 }
 .photo{
     width: 165px;
     height: 90%;
-    margin: 0 15px;
-    display: inline-block;
+    margin: 0 15px;  
     background-size: cover;
     background-position: center;
     border-radius: 0.5rem;

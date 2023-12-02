@@ -46,11 +46,21 @@ class Carousel {
         for (let i = 1; i <= this.nb_images; i++) {
             const div = document.createElement("div");
             div.className = "photo";
-            div.style.backgroundImage = `url('./assets/images/image${i}.jpg')`;
+            div.style.backgroundImage = `url('./assets/images/movie${i}.jpg')`;
+            div.dataset.index = i;
+            div.addEventListener("click", this.handleImageClick.bind(this));
             this.container.appendChild(div);
         }
     }
+
+    handleImageClick(event) {
+        // Accéder à l'index de l'image à partir de l'attribut data
+        const imageIndex = event.currentTarget.dataset.index;
+        console.log(`Image cliquée : ${imageIndex}`);
+    }
 }
+
+
 
 // Instances des catégories
 const categoryBestCarousel = new Carousel("#category-best");
