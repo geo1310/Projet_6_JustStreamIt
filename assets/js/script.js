@@ -19,7 +19,7 @@ document.body.onload=function(){
 left_button.onclick=function(){
     if(position>-nb_images+1){
         position--
-        container.style.transform = "translateX("+ position*10 + "%)"
+        container.style.transform = "translateX("+ position*11 + "%)"
         container.style.transition = "all 1s ease"
         afficherMasquer()
     }
