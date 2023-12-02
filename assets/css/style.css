@@ -55,7 +55,7 @@
     
 }
 .carrousel{
-    width: 75%;
+    width: 73%;
     height: 300px;
     padding-bottom: 20px;
     overflow: hidden;
@@ -71,9 +71,9 @@ h2{
     align-items: center;
 }
 .photo{
-    width: 3%;
+    width: 165px;
     height: 90%;
-    margin: 0 16px;
+    margin: 0 15px;
     display: inline-block;
     background-size: cover;
     border-radius: 0.5rem;

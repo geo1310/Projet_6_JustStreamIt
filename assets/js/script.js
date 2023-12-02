@@ -1,13 +1,36 @@
 /**/
-let nb_images = 10
+const nb_images = 10
+const left_button = document.querySelector(".button-left")
+const right_button = document.querySelector(".button-right")
+const container = document.querySelector(".container-best")
 let position = 0
-let left_button = document.querySelector(".button-left")
-let right_button = document.querySelector(".button-right")
-let container = document.querySelector(".container-best")
 
 afficherMasquer()
 
-document.body.onload=function(){
+left_button.onclick=function(){
+    if(position>-nb_images+1){
+        updatePosition(position-1)
+    }
+}
+right_button.onclick=function(){
+    if(position<0){
+        updatePosition(position+1)
+    }
+}
+
+function afficherMasquer(){
+    left_button.style.visibility = position <= -nb_images+1 ? "hidden" : "visible"
+    right_button.style.visibility = position == 0 ? "hidden" : "visible"
+}
+
+function updatePosition(newPosition){
+    position = newPosition
+    container.style.transform = "translateX("+ position*195 + "px)"
+    container.style.transition = "all 1s ease"
+    afficherMasquer()
+}
+
+document.addEventListener("DOMContentLoaded", function(){
     container.style.width=(40*nb_images)+"%"
     for(let i=1; i<=nb_images; i++){
         let div = document.createElement("div")
@@ -15,34 +38,4 @@ document.body.onload=function(){
         div.style.backgroundImage="url('./assets/images/image" + i + ".jpg')"
         container.appendChild(div)
     }
-}
-left_button.onclick=function(){
-    if(position>-nb_images+1){
-        position--
-        container.style.transform = "translateX("+ position*11 + "%)"
-        container.style.transition = "all 1s ease"
-        afficherMasquer()
-    }
-}
-right_button.onclick=function(){
-    if(position<0){
-        position++
-        container.style.transform = "translateX("+ position*10 + "%)"
-        container.style.transition = "all 1s ease"
-        afficherMasquer()
-    }
-}
-function afficherMasquer(){
-    if(position <= -nb_images){
-        left_button.style.visibility = "hidden"
-    }
-    else{
-        left_button.style.visibility = "visible"
-    }
-    if(position == 0){
-        right_button.style.visibility = "hidden"
-    }
-    else{
-        right_button.style.visibility = "visible"
-    }
-}
+})
