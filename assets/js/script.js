@@ -30,7 +30,7 @@ class Carousel {
     }
 
     afficherMasquer() {
-        this.left_button.style.visibility = this.position <= -this.nb_images + 1 ? "hidden" : "visible";
+        this.left_button.style.visibility = this.position <= -this.nb_images + 7 ? "hidden" : "visible";
         this.right_button.style.visibility = this.position === 0 ? "hidden" : "visible";
     }
 
@@ -44,17 +44,18 @@ class Carousel {
     setupImages() {
         this.container.style.width = `${40 * this.nb_images}%`;
         for (let i = 1; i <= this.nb_images; i++) {
-            const div = document.createElement("div");
-            div.className = "photo";
-            div.style.backgroundImage = `url('./assets/images/movie${i}.jpg')`;
-            div.dataset.index = i;
-            div.addEventListener("click", this.handleImageClick.bind(this));
-            this.container.appendChild(div);
+            const img = document.createElement("img");
+            img.className = "photo";
+            img.src = `./assets/images/movie${i}.jpg`;
+            img.alt = `Movie ${i}`;
+            img.dataset.index = i;
+            img.addEventListener("click", this.handleImageClick.bind(this));
+            this.container.appendChild(img);
         }
     }
+    
 
     handleImageClick(event) {
-        // Accéder à l'index de l'image à partir de l'attribut data
         const imageIndex = event.currentTarget.dataset.index;
         console.log(`Image cliquée : ${imageIndex}`);
     }
