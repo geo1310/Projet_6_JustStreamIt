@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="./assets/js/script.js" defer></script>
+    <script  type="module" src="./assets/js/carousel.js" defer></script>
+    <script  type="module" src="./assets/js/api.js" defer></script>
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/icones/logo_JustStreamIt.ico">
     <title>JustStreamIt</title>
 </head>
@@ -19,17 +20,17 @@
         </nav>
     </header>
     <main id="main">
-        <div id="best-movie">
-            <span>
+        <section id="best-movie">
+            <div class="movie-info">
                 <h2>Movie 1</h2>
                 <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur doloribus sequi officia voluptatum 
                     atque deserunt non magnam explicabo impedit est quis unde soluta inventore recusandae nemo porro 
                     aliquid id fugit molestias dolor vero ab, omnis mollitia! Eligendi iusto repellat eius, voluptas 
                     officiis odio alias sequi dolor similique facere neque molestiae.</P>
                 <button><img src="./assets/icones/play.png" alt="icone play"/>Lecture</button>
-            </span>
-            <img src="./assets/images/movie5.jpg" alt="movie-2"/>
-        </div>
+            </div>
+            <img src="./assets/images/image-not-found.jpg" alt="movie-2"/>
+        </section>
         <section id="category-best" class="section">
             <div class="carrousel">
                 <h2>Films les mieux notés</h2>
@@ -40,7 +41,7 @@
         </section>
         <section id="category-1" class="section">
             <div class="carrousel">
-                <h2>Catégorie 1</h2>
+                <h2>Aventure</h2>
                 <div class="container"></div>
             </div>
             <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right" />
@@ -48,7 +49,7 @@
         </section>
         <section id="category-2" class="section">
             <div class="carrousel">
-                <h2>Catégorie 2</h2>
+                <h2>Animation</h2>
                 <div class="container"></div>
             </div>
             <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right" />
@@ -56,7 +57,7 @@
         </section>
         <section id="category-3" class="section">
             <div class="carrousel">
-                <h2>Catégorie 3</h2>
+                <h2>Action</h2>
                 <div class="container"></div>
             </div>
             <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right" />

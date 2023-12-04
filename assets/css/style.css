@@ -46,8 +46,8 @@
     
     align-items: center;
 }
-#best-movie span{
-    width: 40vw;
+.movie-info{
+    width: 40%;
 }
 #best-movie h2{
     font-size: 64px;
@@ -55,7 +55,7 @@
     margin: 0;
 }
 #best-movie img{
-    width: 15vw;
+    width: 25%;
     border: solid 10px #fff;
 }
 #best-movie p{
