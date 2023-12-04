@@ -34,13 +34,14 @@ class Carousel {
     }
 
     afficherMasquer() {
-        this.left_button.style.visibility = this.position <= -this.nb_images + 7 ? "hidden" : "visible";
+        console.log(this.position)
+        this.left_button.style.visibility = this.position <= -this.nb_images + 4 ? "hidden" : "visible";
         this.right_button.style.visibility = this.position === 0 ? "hidden" : "visible";
     }
 
     updatePosition(newPosition) {
         this.position = newPosition;
-        this.container.style.transform = `translateX(${this.position * 195}px)`;
+        this.container.style.transform = `translateX(${this.position * 250}px)`;
         this.container.style.transition = "all 1s ease";
         this.afficherMasquer();
     }
@@ -67,21 +68,7 @@ class Carousel {
             for (const movie of imagesData) {
                 const img = document.createElement("img");
                 img.className = "photo";
-
-                // verification de l url de l'image
-                fetch(movie.image_url)
-                .then(response => {
-                    if (!response.ok) {
-                        img.src = "../../assets/images/image-not-found.jpg";
-                    } else {
-                        img.src = movie.image_url;
-                    }
-                })
-                .catch(() => {
-                    img.src = "../../assets/images/image-not-found.jpg";
-                });
-
-                img.src = movie.image_url ? movie.image_url : "../images/image-not-found.jpg";
+                img.src = movie.image_url;
                 img.alt = movie.title;
                 img.dataset.index = movie.id;
                 img.addEventListener("click", this.handleImageClick.bind(this));

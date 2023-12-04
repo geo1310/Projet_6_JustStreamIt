@@ -92,15 +92,15 @@
     
 }
 .carrousel{
-    width: 73%;
-    height: 350px;
+    width: 55%;
+    height: 450px;
     padding-bottom: 20px;
     overflow: hidden;
 }
 h2{
     font-size: 32px;
     color: aliceblue;
-    margin-left: 20px;
+    margin-bottom: 70px;
     text-align: center;
 }
 .container{
@@ -110,11 +110,10 @@ h2{
 
 }
 .photo{
-    width: 165px;
-    height: 90%;
-    margin: 0 15px;  
-    background-size: cover;
-    background-position: center;
+    width: 200px;
+    color: white;
+    font-size: 20px;
+    margin: 0 25px;  
     border-radius: 1rem;
     transition: all 0.8s ease;
 }
@@ -127,11 +126,11 @@ h2{
     transition: all 0.5s ease;
 }
 .button-left{
-    left: 140px;
+    left: 220px;
     transform: rotate(180deg);
 }
 .button-right{
-    right: 140px;
+    right: 220px;
     transform: rotate(0deg);
 }
 .button:hover{
