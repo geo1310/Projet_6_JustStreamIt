@@ -3,7 +3,7 @@ import { fetchData } from './api.js';
 
 class Carousel {
     constructor(categorySelector,url) {
-        this.nb_images = 20;
+        this.nb_images = 7;
         this.left_button = document.querySelector(`${categorySelector} .button-left`);
         this.right_button = document.querySelector(`${categorySelector} .button-right`);
         this.container = document.querySelector(`${categorySelector} .container`);
