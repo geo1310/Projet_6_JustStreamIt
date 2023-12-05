@@ -166,6 +166,7 @@ h2{
 .fa-xmark{
 	position: absolute;
 	font-size: 40px;
+    color: white;
 	top: 20px;
 	right: 20px;
     transition: all 0.5s ease;
@@ -176,7 +177,7 @@ h2{
 }
 #title-modal{
 	font-family: 'Work Sans',sans-serif;
-	color: black;
+	color: white;
 	font-size: 26px;
 }
 .modal-container{
@@ -203,7 +204,7 @@ h2{
 	padding: 50px;
 	min-width: 500px;
 	max-width: 500px;
-    background-color: #fff;
+    background-color: #000;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);

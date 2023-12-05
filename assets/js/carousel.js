@@ -1,5 +1,5 @@
 import { fetchData } from './api.js';
-import { toggleModal} from './modale.js';
+import { modalDisplay } from './modale.js';
 
 
 class Carousel {
@@ -83,7 +83,7 @@ class Carousel {
     
     handleImageClick(event) {
         const movieId = event.currentTarget.dataset.index;
-        toggleModal(movieId)
+        modalDisplay(movieId)
         
     }
 }
