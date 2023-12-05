@@ -1,5 +1,5 @@
 import { fetchData } from './api.js';
-import { modalDisplay } from './modale.js';
+import { modalDisplay } from './modal.js';
 
 
 class Carousel {

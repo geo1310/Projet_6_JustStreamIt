@@ -26,10 +26,9 @@
     </header>
     <main id="main">
         <section id="best-movie">
-            <div class="movie-info">
+            <div class="best-movie-info">
                 <h2 class="best-movie-title">...</h2>
                 <P class="best-movie-description-1">...</P>
-                <P class="best-movie-description-2">...</P>
                 <button><img src="./assets/icones/play.png" alt="icone play"/>Lecture</button>
             </div>
             <img  class="best-movie-image" alt=""/>
@@ -67,18 +66,23 @@
             <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-left" />
         </section>
 
-        <!-- Fenetre modale -->
+        <!-- Fenetre modale d'un film -->
 
 	    <div class="modal-container">
 	    	<div class="overlay modal-trigger"></div>
 	    	<div class="modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="title-modal">    		
 	    		<i aria-label="close modal" class="fa-solid fa-xmark modal-trigger"></i>
-	    		<div class="modal-header">
-	    			<h1 id="title-modal"></h1>
-	    		</div>
 	    		<div class="modal-body">
-	    		</div>
-	    		<div class="modal-footer">
+                    <div class="movie-picture-rating">
+                        <img  class="movie-image" alt=""/>
+                        <div class="movie-rating"></div>
+                    </div>
+                    <div class="movie-info">
+                        <h1 class="movie-title"></h1>
+                        <P class="movie-description">...</P>
+                        <div class="movie-genres"></div>
+                        <div class="movie-realisation"></div>
+                    </div>
 	    		</div>
 	    	</div>
 	    </div>
