@@ -24,7 +24,6 @@ async function bestMovieId(){
 }
 
 // recuperation des donnees avec l'id
-
 async function movieId(id){
     try {  
         const dataId = await fetchData(`http://127.0.0.1:8000/api/v1/titles/${id}`);

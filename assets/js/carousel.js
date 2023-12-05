@@ -1,4 +1,5 @@
 import { fetchData } from './api.js';
+import { toggleModal} from './modale.js';
 
 
 class Carousel {
@@ -34,7 +35,6 @@ class Carousel {
     }
 
     afficherMasquer() {
-        console.log(this.position)
         this.left_button.style.visibility = this.position <= -this.nb_images + 4 ? "hidden" : "visible";
         this.right_button.style.visibility = this.position === 0 ? "hidden" : "visible";
     }
@@ -67,7 +67,7 @@ class Carousel {
             this.container.style.width = `${40 * imagesData.length}%`;
             for (const movie of imagesData) {
                 const img = document.createElement("img");
-                img.className = "photo";
+                img.className = "photo modal-trigger";
                 img.src = movie.image_url;
                 img.alt = movie.title;
                 img.dataset.index = movie.id;
@@ -82,8 +82,9 @@ class Carousel {
     }
     
     handleImageClick(event) {
-        const imageIndex = event.currentTarget.dataset.index;
-        console.log(`Image cliquée : ${imageIndex}`);
+        const movieId = event.currentTarget.dataset.index;
+        toggleModal(movieId)
+        
     }
 }
 
@@ -94,3 +95,6 @@ const categoryBestCarousel = new Carousel("#category-best","http://127.0.0.1:800
 const category1Carousel = new Carousel("#category-1", "http://127.0.0.1:8000/api/v1/titles/?genre_contains=Adventure&sort_by=-imdb_score");
 const category2Carousel = new Carousel("#category-2", "http://127.0.0.1:8000/api/v1/titles/?genre_contains=Animation&sort_by=-imdb_score");
 const category3Carousel = new Carousel("#category-3", "http://127.0.0.1:8000/api/v1/titles/?genre_contains=Action&sort_by=-imdb_score");
+
+
+
