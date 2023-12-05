@@ -61,7 +61,7 @@
     font-size: 24px;
     color: #fff;
 }
-#best-movie button{
+.best-movie-button{
     background-color: #fff;
     border-radius: 5px;
     margin-top: 40px;
@@ -215,6 +215,7 @@ h2{
 }
 .movie-info{
     width: 50%;
+    line-height: 25px;
 }
 .movie-title{
     margin: 0;
