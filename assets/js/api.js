@@ -1,5 +1,7 @@
 // appels de l'api
 
+const urlApi = 'http://127.0.0.1:8000/api/v1/titles/';
+
 // recuperation des donnees d'une url
 async function fetchData(url) {
     const response = await fetch(url);
@@ -14,9 +16,7 @@ async function fetchData(url) {
 // recupération de l'id du meilleur film
 async function bestMovieId() {
     try {
-        const dataApi = await fetchData(
-            'http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score'
-        );
+        const dataApi = await fetchData(urlApi + '?sort_by=-imdb_score');
         const bestMovie = dataApi.results[0];
         return bestMovie.id;
     } catch (error) {
@@ -28,9 +28,7 @@ async function bestMovieId() {
 // recuperation des donnees avec l'id
 async function movieId(id) {
     try {
-        const dataId = await fetchData(
-            `http://127.0.0.1:8000/api/v1/titles/${id}`
-        );
+        const dataId = await fetchData(urlApi + `${id}`);
         return dataId;
     } catch (error) {
         console.error('Erreur lors du chargement des données :', error);

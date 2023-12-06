@@ -15,9 +15,7 @@ const movieGenres = document.querySelector('.movie-genres');
 const movieRealisation = document.querySelector('.movie-realisation');
 const movieRating = document.querySelector('.movie-rating');
 
-modalTriggers.forEach((trigger) =>
-    trigger.addEventListener('click', toggleModal)
-);
+modalTriggers.forEach((trigger) => trigger.addEventListener('click', toggleModal));
 
 export function modalDisplay(id) {
     movieId(id)

@@ -2,18 +2,13 @@ import { fetchData } from './api.js';
 import { modalDisplay } from './modal.js';
 
 class Carousel {
-    constructor(categorySelector, url) {
-        this.nb_images = 7;
-        this.left_button = document.querySelector(
-            `${categorySelector} .button-left`
-        );
-        this.right_button = document.querySelector(
-            `${categorySelector} .button-right`
-        );
-        this.container = document.querySelector(
-            `${categorySelector} .container`
-        );
+    
+    constructor(categorySelector, url, nb_movies) {
+        this.left_button = document.querySelector(`${categorySelector} .button-left`);
+        this.right_button = document.querySelector(`${categorySelector} .button-right`);
+        this.container = document.querySelector(`${categorySelector} .container`);
         this.url = url;
+        this.nb_movies = nb_movies;
         this.position = 0;
 
         this.init();
@@ -27,7 +22,7 @@ class Carousel {
 
     addEventListeners() {
         this.left_button.onclick = () => {
-            if (this.position > -this.nb_images + 1) {
+            if (this.position > -this.nb_movies + 1) {
                 this.updatePosition(this.position - 1);
             }
         };
@@ -40,10 +35,8 @@ class Carousel {
     }
 
     afficherMasquer() {
-        this.left_button.style.visibility =
-            this.position <= -this.nb_images + 4 ? 'hidden' : 'visible';
-        this.right_button.style.visibility =
-            this.position === 0 ? 'hidden' : 'visible';
+        this.left_button.style.visibility = this.position <= -this.nb_movies + 4 ? 'hidden' : 'visible';
+        this.right_button.style.visibility = this.position === 0 ? 'hidden' : 'visible';
     }
 
     updatePosition(newPosition) {
@@ -62,14 +55,14 @@ class Carousel {
 
             // charge le nombre de films predefini
             let next_page = dataApi.next;
-            while (imagesData.length <= this.nb_images && next_page) {
+            while (imagesData.length <= this.nb_movies && next_page) {
                 const nextData = await fetchData(next_page);
                 imagesData = imagesData.concat(nextData.results);
                 next_page = nextData.next;
             }
 
             // affichage des donnees
-            this.container.style.width = `${40 * imagesData.length}%`;
+            this.container.style.width = `${50 * imagesData.length}%`;
             for (const movie of imagesData) {
                 const img = document.createElement('img');
                 img.className = 'photo modal-trigger';
@@ -107,17 +100,21 @@ class Carousel {
 
 const categoryBestCarousel = new Carousel(
     '#category-best',
-    'http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score'
+    'http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score',
+    20
 );
-const category1Carousel = new Carousel(
+const adventureCarousel = new Carousel(
     '#category-1',
-    'http://127.0.0.1:8000/api/v1/titles/?genre_contains=Adventure&sort_by=-imdb_score'
+    'http://127.0.0.1:8000/api/v1/titles/?genre_contains=Adventure&sort_by=-imdb_score',
+    7
 );
-const category2Carousel = new Carousel(
+const animationCarousel = new Carousel(
     '#category-2',
-    'http://127.0.0.1:8000/api/v1/titles/?genre_contains=Animation&sort_by=-imdb_score'
+    'http://127.0.0.1:8000/api/v1/titles/?genre_contains=Animation&sort_by=-imdb_score',
+    7
 );
-const category3Carousel = new Carousel(
+const actionCarousel = new Carousel(
     '#category-3',
-    'http://127.0.0.1:8000/api/v1/titles/?genre_contains=Action&sort_by=-imdb_score'
+    'http://127.0.0.1:8000/api/v1/titles/?genre_contains=Action&sort_by=-imdb_score',
+    7
 );
