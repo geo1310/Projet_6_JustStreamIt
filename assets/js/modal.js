@@ -6,7 +6,6 @@ import { movieId } from './api.js';
 const modal = document.querySelector('.modal');
 const modalContainer = document.querySelector('.modal-container');
 const modalTriggers = document.querySelectorAll('.modal-trigger');
-
 let movie;
 const movieTitle = document.querySelector('.movie-title');
 const movieImage = document.querySelector('.movie-image');
@@ -15,8 +14,10 @@ const movieGenres = document.querySelector('.movie-genres');
 const movieRealisation = document.querySelector('.movie-realisation');
 const movieRating = document.querySelector('.movie-rating');
 
+// ecouteurs pour l'affichage ou la fermeture de la modale
 modalTriggers.forEach((trigger) => trigger.addEventListener('click', toggleModal));
 
+// recupération des donnees de l id du film, mise a jour du film et affichage de la modale
 export function modalDisplay(id) {
     movieId(id)
         .then((result) => {
@@ -28,7 +29,7 @@ export function modalDisplay(id) {
         });
 }
 
-// ouvre ou ferme la modale
+// affiche ou ferme la modale
 function toggleModal() {
     modalContainer.classList.toggle('active');
     if (modalContainer.classList.contains('active')) {

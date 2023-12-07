@@ -2,7 +2,7 @@ import { fetchData } from './api.js';
 import { modalDisplay } from './modal.js';
 
 class Carousel {
-    
+    // constructeur du carrousel avec le selecteur html, l'url de l'api et le nombre de films a afficher
     constructor(categorySelector, url, nb_movies) {
         this.left_button = document.querySelector(`${categorySelector} .button-left`);
         this.right_button = document.querySelector(`${categorySelector} .button-right`);
@@ -20,6 +20,7 @@ class Carousel {
         this.setupImages();
     }
 
+    // ecouteurs pour les boutons droite et gauche et mets à jour la position des films dans le container
     addEventListeners() {
         this.left_button.onclick = () => {
             if (this.position > -this.nb_movies + 1) {
@@ -34,11 +35,13 @@ class Carousel {
         };
     }
 
+    // affiche ou masque les boutons du carrousel
     afficherMasquer() {
         this.left_button.style.visibility = this.position <= -this.nb_movies + 4 ? 'hidden' : 'visible';
         this.right_button.style.visibility = this.position === 0 ? 'hidden' : 'visible';
     }
 
+    // mise a jour de la position des images
     updatePosition(newPosition) {
         this.position = newPosition;
         this.container.style.transform = `translateX(${this.position * 250}px)`;
@@ -46,6 +49,7 @@ class Carousel {
         this.afficherMasquer();
     }
 
+    // recuperation dans l'api des donnees des films par rapport à l'url
     async setupImages() {
         let imagesData = [];
 
@@ -86,10 +90,11 @@ class Carousel {
             }
         } catch (error) {
             console.error('Erreur lors du chargement des données :', error);
-            throw error; // Pour propager l'erreur à l'appelant
+            throw error; // Pour propager l'erreur
         }
     }
 
+    // lance la modale avec l'id du film demande
     handleImageClick(event) {
         const movieId = event.currentTarget.dataset.index;
         modalDisplay(movieId);

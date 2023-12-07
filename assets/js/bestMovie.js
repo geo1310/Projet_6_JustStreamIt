@@ -8,7 +8,7 @@ const bestMovieImage = document.querySelector('.best-movie-image');
 const bestMovieDescription = document.querySelector('.best-movie-description');
 const bestMovieButton = document.querySelector('.best-movie-button');
 
-// evenements
+// ecouteurs pour l'image du film et le bouton play
 bestMovieButton.onclick = () => {
     modalDisplay(bestMovieImage.dataset.index);
 };
