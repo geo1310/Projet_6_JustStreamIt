@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://kit.fontawesome.com/6d52193b89.js" crossorigin="anonymous"></script>
-    <script  type="module" src="./assets/js/bestMovie.js" defer></script>
-    <script  type="module" src="./assets/js/carousel.js" defer></script>
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/icones/logo_JustStreamIt.ico">
     <title>JustStreamIt</title>
 </head>
@@ -26,43 +24,43 @@
                 <h2 class="best-movie-title">...</h2>
                 <P class="best-movie-description">...</P>
                 <button class="best-movie-button">
-                    <img src="./assets/icones/play.png" alt="icone play"/>
+                    <img src="./assets/icones/play.png" alt="icone play">
                     Lecture
                 </button>
             </div>
-            <img  class="best-movie-image photo" alt=""/>
+            <img  src="./assets/images/image-not-found.jpg" class="best-movie-image photo" alt="image not found">
         </section>
         <section id="category-best" class="section">
             <div class="carrousel">
                 <h2>Films les mieux notés</h2>
                 <div class="container"></div>
             </div>
-            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right" />
-            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-left" />
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right">
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-left">
         </section>
         <section id="category-1" class="section">
             <div class="carrousel">
                 <h2>Aventure</h2>
                 <div class="container"></div>
             </div>
-            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right" />
-            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-left" />
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right">
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-left">
         </section>
         <section id="category-2" class="section">
             <div class="carrousel">
                 <h2>Animation</h2>
                 <div class="container"></div>
             </div>
-            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right" />
-            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-left" />
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right">
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-left">
         </section>
         <section id="category-3" class="section">
             <div class="carrousel">
                 <h2>Action</h2>
                 <div class="container"></div>
             </div>
-            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right" />
-            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-left" />
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-right">
+            <img src="./assets/icones/bouton.png" alt="chevron"  class="button button-left">
         </section>
 
         <!-- Fenetre modale -->
@@ -70,14 +68,16 @@
 	    <div class="modal-container">
 	    	<div class="overlay modal-trigger"></div>
 	    	<div class="modal" aria-hidden="true" role="dialog" aria-modal="false">    		
-	    		<i aria-label="close modal" class="fa-solid fa-xmark modal-trigger"></i>
+	    		<button aria-label="close modal" class="modal-trigger close-modal">
+                    <i  class="fa-solid fa-xmark"></i>
+                </button>
 	    		<div class="modal-body">
                     <div class="movie-picture-rating">
-                        <img  class="movie-image" alt=""/>
+                        <img  src="./assets/images/image-not-found.jpg" class="movie-image" alt="image not found">
                         <div class="movie-rating"></div>
                     </div>
                     <div class="movie-info">
-                        <h1 class="movie-title"></h1>
+                        <h2 class="movie-title">...</h2>
                         <P class="movie-description">...</P>
                         <div class="movie-genres"></div>
                         <div class="movie-realisation"></div>
@@ -87,7 +87,11 @@
 	    </div>
     </main>
     <div id="footer">
-        <img src="./assets/icones/logo_JustStreamIt.png" alt="logo JustStreamIt" >
+        <img src="./assets/icones/logo_JustStreamIt.png" alt="logo JustStreamIt">
     </div>
+
+    <!-- script js -->
+    <script  type="module" src="./assets/js/bestMovie.js"></script>
+    <script  type="module" src="./assets/js/carousel.js"></script>
 </body>
 </html>

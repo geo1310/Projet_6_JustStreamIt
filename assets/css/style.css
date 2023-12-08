@@ -162,16 +162,22 @@ h2{
 
 /* fenetre modale */
 
-.fa-xmark{
-	position: absolute;
+.close-modal{
+    position: absolute;
 	font-size: 40px;
-    color: white;
+    background-color: transparent;
+    border: none;
 	top: 20px;
 	right: 20px;
     transition: all 0.5s ease;
 }
+.fa-xmark{
+	font-size: 40px;
+    color: white;
+    transition: all 0.5s ease;
+}
 .fa-xmark:hover{
-    transform: scale(1.2);
+    transform: scale(1.4);
     transition: all 0.5s ease;
 }
 #title-modal{

@@ -22,23 +22,17 @@ class Carousel {
 
     // ecouteurs pour les boutons droite et gauche et mets à jour la position des films dans le container
     addEventListeners() {
-        this.left_button.onclick = () => {
-            if (this.position > -this.nb_movies + 1) {
+        this.right_button.onclick = () => {
+            if (this.position > -this.nb_movies) {
                 this.updatePosition(this.position - 1);
             }
         };
 
-        this.right_button.onclick = () => {
+        this.left_button.onclick = () => {
             if (this.position < 0) {
                 this.updatePosition(this.position + 1);
             }
         };
-    }
-
-    // affiche ou masque les boutons du carrousel
-    afficherMasquer() {
-        this.left_button.style.visibility = this.position <= -this.nb_movies + 4 ? 'hidden' : 'visible';
-        this.right_button.style.visibility = this.position === 0 ? 'hidden' : 'visible';
     }
 
     // mise a jour de la position des images
@@ -47,6 +41,12 @@ class Carousel {
         this.container.style.transform = `translateX(${this.position * 250}px)`;
         this.container.style.transition = 'all 1s ease';
         this.afficherMasquer();
+    }
+
+    // affiche ou masque les boutons du carrousel
+    afficherMasquer() {
+        this.right_button.style.visibility = this.position <= -this.nb_movies + 4 ? 'hidden' : 'visible';
+        this.left_button.style.visibility = this.position === 0 ? 'hidden' : 'visible';
     }
 
     // recuperation dans l'api des donnees des films par rapport à l'url
