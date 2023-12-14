@@ -106,7 +106,7 @@ class Carousel {
 const categoryBestCarousel = new Carousel(
     '#category-best',
     'http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score',
-    20
+    7
 );
 const adventureCarousel = new Carousel(
     '#category-1',

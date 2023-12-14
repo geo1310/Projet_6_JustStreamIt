@@ -36,7 +36,7 @@ function toggleModal() {
         modal.setAttribute('aria-hidden', 'false');
         modal.setAttribute('aria-modal', 'true');
         document.body.style.overflow = 'hidden';
-        modalContent1(movie);
+        modalContent1();
     } else {
         modal.setAttribute('aria-hidden', 'true');
         modal.setAttribute('aria-modal', 'false');
@@ -45,7 +45,7 @@ function toggleModal() {
 }
 
 // creation du contenu de la modale
-function modalContent1(movie) {
+function modalContent1() {
     // creation du contenu de la modale
     movieTitle.innerText = movie.title;
 
